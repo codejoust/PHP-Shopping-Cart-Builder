@@ -78,7 +78,7 @@ $default_config = array('currency_code' => $config['currency'], 'shopping_url'=>
 	<td valign='top'>
 		<a href="<?php echo $imgpath; ?>/large_<?php echo $item->imgid; ?>.jpg" target="_self" rel="lightbox">
 			<?php if ($item->imgid != ''): ?>
-				<img src='<?php echo $imgpath; ?>/_<?php echo $item->imgid; ?>.jpg' />
+				<img src='<?php echo $imgpath; ?>/thumb_<?php echo $item->imgid; ?>.jpg' />
 			<?php endif; ?>
 			<div style="width: 100px; position:relative;"></div>
 		</a>
