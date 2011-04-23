@@ -16,7 +16,7 @@
 
 // Main Configuration
 
-$imgpath = 'upload_pic/'; // Folder needs write-by-all permissions.
+$imgpath = 'item_images/'; // Folder needs write-by-all permissions.
 $uname = 'testing';
 $password = 'dc724af18fbdd4e59189f5fe768a5f8311527050';
 

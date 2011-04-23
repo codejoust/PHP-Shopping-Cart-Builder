@@ -23,7 +23,7 @@ if (!defined('__FILE_OK')){
 // Usage Demo: (on store.php, etc)
 <?php require_once 'admin/render.php'; ?> // Put this at the top of the file.
 <?php show_items(); ?> // Prints out items html as specified in earlier template.
-<?php add_to_cart(); ?> // Prints out add to cart button
+<?php view_cart_button(); ?> // Prints out the view cart button
 */
 
 $data = json_decode(file_get_contents('data/data.json'));
@@ -45,7 +45,7 @@ function render_inputs($arr){
 	return $buf;
 }
 
-function add_to_cart(){
+function view_cart_button(){
 global $config;
 global $data;
 
@@ -63,6 +63,7 @@ global $data;
 
 function show_items(){
 global $config;
+global $imgpath;
 global $data;
 $default_config = array('currency_code' => $config['currency'], 'shopping_url'=>$config['surl'],
 						'cmd'=>'_cart', 'add'=>'1', 'business'=>$config['paypal']);
@@ -75,9 +76,9 @@ $default_config = array('currency_code' => $config['currency'], 'shopping_url'=>
 <tr class='item'>
 	
 	<td valign='top'>
-		<a href="upload_pic/large_<?php echo $item->imgid; ?>.jpg" target="_self" rel="lightbox">
+		<a href="<?php echo $imgpath; ?>/large_<?php echo $item->imgid; ?>.jpg" target="_self" rel="lightbox">
 			<?php if ($item->imgid != ''): ?>
-				<img src='upload_pic/thumb_<?php echo $item->imgid; ?>.jpg' />
+				<img src='<?php echo $imgpath; ?>/_<?php echo $item->imgid; ?>.jpg' />
 			<?php endif; ?>
 			<div style="width: 100px; position:relative;"></div>
 		</a>
@@ -120,6 +121,6 @@ $default_config = array('currency_code' => $config['currency'], 'shopping_url'=>
 
 // Demonstration:
 if (realpath(__FILE__) == realpath($_SERVER['SCRIPT_FILENAME'])){
-	add_to_cart();
+	view_cart_button();
 	show_items();
 }

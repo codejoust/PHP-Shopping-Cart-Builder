@@ -216,7 +216,7 @@ ko.bindingHandlers.flash = {
 				viewModel.updateServer();
 			},
 			get_url: function(path){
-				return 'upload_pic/thumb_'+path+'.jpg';
+				return '<?php echo $imgpath; ?>/thumb_'+path+'.jpg';
 			},
 			notify_updated: function(){
 				viewModel.items.valueHasMutated();

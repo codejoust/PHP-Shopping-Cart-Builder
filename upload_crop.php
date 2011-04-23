@@ -36,7 +36,8 @@ $error = '';
 
 //Constants
 //You can alter these options
-$upload_dir = "upload_pic"; 				// The directory for the images to be saved in
+//$upload_dir = "item_images"; 				// The directory for the images to be saved in
+$upload_dir = $imgpath;
 $upload_path = $upload_dir."/";				// The path to where the image will be saved
 $orig_image_name = "orig_$num.jpg";         // Original File  
 $large_image_name = "large_$num.jpg"; 		// New name of the large image
